@@ -90,7 +90,7 @@ watchPostEffect(() => {
             <tbody  v-if="data.length && !isLoading">
                 <tr v-for="row of data" class="border-b border-black cursor-pointer hover:bg-gray-200">
                     <td class="py-1 px-" @click="emitClick(row)" v-for="{key, transform} of props.definition">
-                        <p class="text-clamp-2">
+                        <p class="">
                             {{ transform ? transform(row[key]) : row[key] }}
                         </p>
                     </td>

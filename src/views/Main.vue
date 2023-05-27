@@ -4,9 +4,11 @@ import { ref, watchPostEffect } from 'vue'
 
 import type { TableHeader } from '@/interfaces';
 
-import { SEARCH } from '../config/endpoints'
 import Visualizer from '../components/Visualizer.vue';
 import Table from '../components/Table.vue'
+import Footer from '@/layout/Footer.vue';
+
+import { SEARCH } from '../config/endpoints'
 
 const tableDefinition: TableHeader[] = [
     {
@@ -44,11 +46,13 @@ watchPostEffect(() => {
             class="w-full drop-shadow-xl border-2 h-12 p-4 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             placeholder="Search" type="text">
 
-        <section class="grid xl:grid-cols-2 grid-cols-1 gap-2">
+        <section class="grid xl:grid-cols-2 grid-cols-1 gap-2 max-h-[80vh]">
             <Table @click="tableClick" :definition="tableDefinition" :search="search" :uri="tableUri" />
-            <div class="max-h-[80vh] overflow-y-auto">
+            <div class="max-h-[35vh] lg:max-h-[70vh] overflow-y-auto">
                 <Visualizer :keywords="search.split(' ')" :email="selectedMail"/>
             </div>
         </section>
+        
     </main>
+    <Footer />
 </template>
