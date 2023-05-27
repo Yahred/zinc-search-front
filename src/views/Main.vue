@@ -46,7 +46,9 @@ watchPostEffect(() => {
 
         <section class="grid xl:grid-cols-2 grid-cols-1 gap-2">
             <Table @click="tableClick" :definition="tableDefinition" :search="search" :uri="tableUri" />
-            <Visualizer :email="selectedMail"/>
+            <div class="max-h-[80vh] overflow-y-auto">
+                <Visualizer :keywords="search.split(' ')" :email="selectedMail"/>
+            </div>
         </section>
     </main>
 </template>

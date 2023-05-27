@@ -5,24 +5,33 @@ import {
 } from 'vue'
 
 interface VisualizerProps {
-    email: string
+    email: string,
+    keywords?: string[],
 }
 
 const props = defineProps<VisualizerProps>();
 
 const pRef = ref<VNodeRef | null>(null);
 
-watchEffect(() => {
-    console.log(pRef.value);
-    if (pRef.value) {
-        pRef.value.innerHTML = props.email;
-    }
+function highLightKeywords() {
+    if (!props.keywords) return;
 
-    console.log(props.email);
+    const regex = new RegExp(props.keywords.join('|'), 'gi');
+    const text = pRef.value?.innerHTML || '';
+
+    pRef.value!.innerHTML = text.replace(regex, (match: string) => `<span class="bg-yellow-200">${match}</span>`);
+}
+
+watchEffect(() => {
+    if (!pRef.value) return;
+    
+    pRef.value.innerHTML = props.email;
+    highLightKeywords();
+
 });
 
 
 </script>
 <template>
-    <p :ref="pRef"></p>
+    <p ref="pRef"></p>
 </template>

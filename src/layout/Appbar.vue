@@ -1,5 +1,5 @@
 <template>
-    <header class="w-full bg-blue-500 drop-shadow-2xl bg-blend-color flex justify-between px-3 py-6">
+    <header class="w-full drop-shadow-2xl bg-blend-color flex justify-between px-3 py-6 bg-gradient-to-r from-cyan-500 to-blue-600">
         <div class="text-2xl text-white font-bold grid place-items-center">
             <h1>
                 ENRON ZINC SEARCH
