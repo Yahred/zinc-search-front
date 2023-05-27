@@ -1,0 +1,103 @@
+{
+    "name": "emails",
+    "storage_type": "disk",
+    "shard_num": 3,
+    "properties": {
+        "message_id": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": true
+        },
+        "date": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": true
+        },
+        "from": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": true
+        },
+        "to": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": true
+        },
+        "subject": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": true
+        },
+        "mime_version": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "content_type": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "content_transfer_encoding": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "x_from": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "x_to": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "x_cc": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "x_bcc": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "x_folder": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "x_origin": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "x_filename": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": false
+        },
+        "body": {
+            "type": "text",
+            "index": true,
+            "store": false,
+            "highlightable": true
+        }
+    }
+}
