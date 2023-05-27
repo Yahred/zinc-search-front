@@ -4,3 +4,10 @@ Email searcher done with Vue and Tailwind, with ZincSearch Engine in the back-en
 
 ## Start the project
 ` npm run dev` 
+
+# BACK END
+Back end server for my email indexer with ZincSearch.
+
+Fully written in GO with chi 🤘, ZincSearch engine was mounted on a Docker.
+
+I wrote a Script file called indexer.go that index all the enron database in the ZincSearch Engine docker
